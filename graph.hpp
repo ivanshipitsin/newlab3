@@ -17,6 +17,8 @@ class Graph{
     std::vector < Tnode> nodelist;
 
     public:
+    Graph(){}
+    Graph(int _size): nodelist(_size), list(_size){}
 
     std::vector < neibVert> neib(int index) {
         if(list.size() <= index) {
@@ -46,6 +48,10 @@ class Graph{
             return;
         }
         nodelist[index] = set;
+    }
+
+    void SetNeibor(int index, std::vector<neibVert> neibo){
+        list[index] = neibo;
     }
 
     int addNode(Tnode & data, std::vector<neibVert> neibor){
